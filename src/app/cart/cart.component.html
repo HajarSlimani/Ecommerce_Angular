@@ -1,0 +1,19 @@
+<div *ngFor="let produit of cart" class="cart-item">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ produit.image }}" class="img-fluid rounded-start" alt="{{ produit.name }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ produit.name }}</h5>
+            
+            <p class="card-text">Prix : {{ produit.price }} MAD</p>
+            <button class="btn btn-danger custom-btn" (click)="removeFromCart(produit)">Retirer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p class="total">Total : {{ total }} MAD</p>
